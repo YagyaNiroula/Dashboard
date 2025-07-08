@@ -1,0 +1,22 @@
+.signIn-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20vh;
+}
+
+.signIn-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+}
+
+input {
+    margin: 0.5rem;
+}
+
+.login-btn {
+    width: 75px;
+    margin-top: 1rem;
+}
