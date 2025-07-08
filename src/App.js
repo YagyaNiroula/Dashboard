@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { UserContextProvider, useUserContext } from "./context/userContext";
 import SignIn from "./components/signIn/signIn";
 import SignUp from "./components/signUp/signUp";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./components/dashboard/Dashboard";
 import "./App.css";
 
 function AppRoutes() {
