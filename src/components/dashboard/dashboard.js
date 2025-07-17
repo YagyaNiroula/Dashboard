@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useUserContext } from "../../context/userContext";
+import Navbar from "./Navbar";
+import UserProfile from "./UserProfile";
+import "./Dashboard.css";
 
 const Dashboard = () => {
-  const { user, logoutUser } = useUserContext();
+  const { user } = useUserContext();
 
   return (
     <div className="dashboard-container">
-      <h1>Dashboard</h1>
-      <p>
-        Welcome, <strong>{user?.displayName || user?.email || "User"}</strong>!
-      </p>
-      <button onClick={logoutUser}>Logout</button>
-      <div style={{ marginTop: "2rem" }}>
-        <h2>Your Dashboard Content</h2>
-        <p>This is a placeholder for your dashboard features.</p>
+      <Navbar />
+      <div className="dashboard-content">
+        <main className="main-content">
+          <div className="dashboard-section">
+            <h2>Welcome to Your Dashboard</h2>
+            <UserProfile />
+          </div>
+        </main>
       </div>
     </div>
   );

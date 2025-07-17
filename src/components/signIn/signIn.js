@@ -6,7 +6,7 @@ import './SignIn.css'
 const SignIn = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
-    const {signInUser, forgotPassword} = useUserContext();
+    const {signInUser, forgotPassword, error} = useUserContext();
     const onSubmit = (e) => {
         e.preventDefault();
         const email = emailRef.current.value;
@@ -30,6 +30,11 @@ const SignIn = () => {
                 <button className="login-btn" type="submit">Sign In</button>
                 <p onClick={forgotPasswordHandler}>Forgot Password?</p>
             </form>
+            {error && (
+                <p style={{ color: 'red', marginTop: '1rem', textAlign: 'center' }}>
+                    {error}
+                </p>
+            )}
             <p style={{ marginTop: "1rem" }}>
                 Don't have an account? <Link to="/signup">Sign Up</Link>
             </p>
