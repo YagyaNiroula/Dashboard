@@ -1,0 +1,136 @@
+.calendar-widget {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px;
+  color: #222;
+  min-width: 350px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-btn {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #e9ecef;
+  border-color: #007bff;
+}
+
+.current-month {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  min-width: 120px;
+  text-align: center;
+}
+
+.calendar-container {
+  margin: 20px 0;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 10px;
+}
+
+.day-header {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  padding: 8px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  padding: 4px;
+}
+
+.calendar-day:hover {
+  background: #f8f9fa;
+}
+
+.calendar-day.empty {
+  cursor: default;
+}
+
+.calendar-day.empty:hover {
+  background: transparent;
+}
+
+.calendar-day.today {
+  background: #007bff;
+  color: white;
+}
+
+.calendar-day.selected {
+  background: #e3f2fd;
+  border: 2px solid #007bff;
+}
+
+.calendar-day.today.selected {
+  background: #0056b3;
+  border-color: #0056b3;
+}
+
+.day-number {
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 1;
+}
+
+
+
+
+
+@media (max-width: 480px) {
+  .calendar-widget {
+    min-width: 300px;
+    padding: 15px;
+  }
+  
+  .day-number {
+    font-size: 12px;
+  }
+  
+
+} 

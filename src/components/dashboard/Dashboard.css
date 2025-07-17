@@ -57,6 +57,15 @@
   box-shadow: none;
 }
 
+.widgets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .widget-section {
   background: #fff;
   border-radius: 8px;
