@@ -7,7 +7,7 @@ import {
     signOut,
     sendPasswordResetEmail
 } from 'firebase/auth'
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, collection, getDocs } from 'firebase/firestore';
 import {auth, db} from "../firebase";
 const UserContext = createContext({})
 //Custom Hook useUserContext
@@ -84,6 +84,23 @@ export const UserContextProvider = ({ children }) => {
         return sendPasswordResetEmail(auth, email);
     };
 
+    const getAllUsers = async () => {
+        try {
+            console.log("getAllUsers: Starting to fetch users from Firestore...");
+            const querySnapshot = await getDocs(collection(db, "users"));
+            console.log("getAllUsers: QuerySnapshot received:", querySnapshot);
+            const users = [];
+            querySnapshot.forEach((doc) => {
+                console.log("getAllUsers: Processing doc:", doc.id, doc.data());
+                users.push({ id: doc.id, ...doc.data() });
+            });
+            console.log("getAllUsers: Final users array:", users);
+            return users;
+        } catch (error) {
+            console.error("Error fetching users:", error);
+            return        }
+    };
+
     const contextValue = {
         user,
         loading,
@@ -92,6 +109,7 @@ export const UserContextProvider = ({ children }) => {
         signInUser,
         logoutUser,
         forgotPassword,
+        getAllUsers
     };
 
     return <UserContext.Provider value={contextValue}>
