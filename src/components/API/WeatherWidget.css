@@ -1,11 +1,11 @@
 .weather-widget {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   color: #222;
   min-width: 180px;
-  min-height: 120px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,25 +17,47 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
-  border-bottom: 1px solid #f3f4f6;
-  padding-bottom: 6px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f0f0f0;
 }
 
 .widget-header h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 1.5rem;
   font-weight: 600;
-  color: #222;
+  color: #333;
 }
 
 .location {
   font-size: 13px;
   color: #666;
-  background: #f3f4f6;
-  padding: 2px 8px;
+  background: #f8f9fa;
+  padding: 4px 10px;
   border-radius: 12px;
   font-weight: 500;
+}
+
+.weather-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.weather-main {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
 }
 
 .temperature {
@@ -48,8 +70,8 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #f3f4f6;
-  padding: 6px 12px;
+  background: #f8f9fa;
+  padding: 8px 12px;
   border-radius: 8px;
   margin: 0 2px;
 }
