@@ -20,6 +20,8 @@ const Dashboard = () => {
   const { user } = useUserContext();
   // State to track which section is currently active 
   const [activeSection, setActiveSection] = useState("dashboard");
+  // State to track if sidebar is open or closed
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Function to render different sections based on what the user clicked in the sidebar
   const renderSection = () => {
@@ -67,10 +69,11 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       {/* Top navigation bar with user info and logout */}
-      <Navbar />
+      <Navbar onSidebarToggle={() => setSidebarOpen(!sidebarOpen)} />
       <div className="dashboard-content">
+        
         {/* Left sidebar with navigation buttons */}
-        <div className="sidebar">
+        <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
           {/* Dashboard button - shows weather widget */}
           <button
             className={`sidebar-btn ${activeSection === "dashboard" ? "active" : ""}`}
@@ -100,6 +103,7 @@ const Dashboard = () => {
             Calendar
           </button>
         </div>
+        
         {/* Main content area that shows the selected section */}
         <main className="main-content">
           {renderSection()}

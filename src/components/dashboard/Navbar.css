@@ -8,9 +8,34 @@
   border-bottom: 1px solid #eee;
 }
 
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .navbar-brand h2 {
   margin: 0;
   color: #333;
+}
+
+.sidebar-toggle-nav {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-toggle-nav:hover {
+  background: #f0f0f0;
+  color: #007bff;
 }
 
 .navbar-menu {

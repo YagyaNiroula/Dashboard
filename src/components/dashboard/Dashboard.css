@@ -6,14 +6,25 @@
 .dashboard-content {
   display: flex;
   min-height: calc(100vh - 80px);
+  position: relative;
 }
+
+
 
 .sidebar {
   width: 250px;
   background: #fff;
   border-right: 1px solid #eee;
   padding: 2rem 0;
+  display: none;
+  transition: all 0.3s ease;
 }
+
+.sidebar.open {
+  display: block;
+}
+
+
 
 .sidebar-btn {
   width: 100%;
@@ -60,14 +71,23 @@
 
 /* Responsive adjustments for better alignment */
 @media (max-width: 768px) {
-  .widgets-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 0 10px;
+  .sidebar-toggle-nav {
+    font-size: 20px;
+    padding: 6px;
+  }
+  
+  .sidebar {
+    width: 250px;
   }
   
   .main-content {
     padding: 1rem;
+  }
+  
+  .widgets-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
   }
 }
 
